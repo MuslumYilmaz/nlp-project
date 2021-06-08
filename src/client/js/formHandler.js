@@ -15,8 +15,12 @@ function handleSubmit(event) {
         })
     .then(res => res.json())
     .then(function(res) {
-        console.log(res);
-        document.getElementById('results').innerHTML = res
+        document.getElementById('model').innerHTML = 'Model: ' + res.model;
+        document.getElementById('score_tag').innerHTML = 'Score: ' + res.score_tag;
+        document.getElementById('agreement').innerHTML = 'Agreement: ' + res.agreement;
+        document.getElementById('subjectivity').innerHTML = 'Subjectivity: ' + res.subjectivity;
+        document.getElementById('confidence').innerHTML = 'Confidence: ' + res.confidence;
+        document.getElementById('irony').innerHTML = 'Irony: ' + res.irony;
     });
 } else {
     alert ('Please enter a valid URL')

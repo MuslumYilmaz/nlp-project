@@ -12,3 +12,11 @@ section {
     max-width: 800px;
     margin: 50px auto;
 }
+
+.result {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 100px);
+    align-items: center;
+    justify-content: center;
+}
