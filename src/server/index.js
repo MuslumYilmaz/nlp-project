@@ -1,22 +1,49 @@
-var path = require('path')
-const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
+var path = require('path');
+const express = require('express');
+const mockAPIResponse = require('./mockAPI.js');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const dotenv = require('dotenv');
+const fetch = require('node-fetch');
 
-const app = express()
+dotenv.config();
+const api_key = process.env.API_KEY;
 
-app.use(express.static('src/client'))
+const app = express();
 
-console.log(__dirname)
+app.use(cors());
+app.use(bodyParser.urlencoded({ 
+    extended: true 
+}));
+app.use(bodyParser.json());
 
-app.get('/', function (req, res) {
-    res.sendFile('/client/views/index.html', { root: __dirname + '/..' })
-})
+app.use(express.static('src/client'));
+
+console.log(__dirname);
+console.log(api_key);
 
 // designates what port the app will listen to for incoming requests
 app.listen(8080, function () {
     console.log('Example app listening on port 8080!')
-})
+});
+
+app.get('/', function (req, res) {
+    res.sendFile('/client/views/index.html', { root: __dirname + '/..' })
+});
 
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
-})
+});
+
+app.post('/userInput', async (req, res) => {
+    const article = req.body.formText;
+    console.log(article);
+    const articleResults = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${api_key}&url=${article}&lang=en`, { method: 'POST' });
+    try {
+        const data = await articleResults.json();
+        console.log(data)
+        res.send(data);
+    } catch (error) {
+        console.log("error",error)
+    }
+});
