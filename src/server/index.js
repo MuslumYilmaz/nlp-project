@@ -28,7 +28,7 @@ app.listen(8080, function () {
 });
 
 app.get('/', function (req, res) {
-    res.sendFile('/client/views/index.html', { root: __dirname + '/..' })
+    res.sendFile('dist/index.html', { root: __dirname + '/../..' })
 });
 
 app.get('/test', function (req, res) {
