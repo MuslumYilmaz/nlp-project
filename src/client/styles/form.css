@@ -1,12 +1,40 @@
 form {
-    border: 1px solid #545454;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     border-radius: 3px;
     padding: 40px;
 }
 
-input {
-    padding: 5px 20px;
-    width: 100%;
+#name {
+    padding: 12px 20px;
+    width: 80%;
     line-height: 16px;
     margin: 10px 0;
+    border: none;
+    border-radius: 15px;
+}
+
+#name:focus, #name:focus{
+    outline: none;
+}
+
+#submit {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    padding: 12px 20px;
+    width: 15%;
+    line-height: 16px;
+    margin: 10px 0;  
+    border-radius: 15px;
+    border: none;
+    background-color: #6200ea;
+    color: white;
+    transition: all .8s;
+}
+
+#submit:hover {
+    cursor: pointer;
+    background-color: #aa66cc;
 }

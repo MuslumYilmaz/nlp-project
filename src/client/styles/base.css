@@ -2,15 +2,18 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 88%);
 }
 
 main {
     flex: 2;
 }
 
-section {
-    max-width: 800px;
-    margin: 50px auto;
+.section-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .result {
@@ -19,4 +22,44 @@ section {
     grid-template-rows: repeat(3, 100px);
     align-items: center;
     justify-content: center;
+    margin: 0 50px;
+}
+
+#results {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+}
+
+#model {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+}
+
+#score_tag {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+}
+
+#agreement {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+}
+
+#subjectivity {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+}
+
+#confidence {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+}
+
+#irony {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+}
+#irony {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
 }

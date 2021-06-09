@@ -1,5 +1,25 @@
 header {
+    height: 9vh;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 10px 40px;
+    box-shadow: 0px 2px #424141a6;
+    background-color: #6e72fc;
+    background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+}
+
+.logo {
+    position: relative;
+    width: 100px;
+    height: 80px;
+    background-image: url('../images/nlp-logo.png');
+    background-size:cover;
+    background-position: center;
+}
+
+a {
+    font-family: 'Cinzel', serif;
+    color: white;
+    text-decoration: none;
 }
