@@ -7,11 +7,11 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     entry: './src/client/index.js',
+    stats: 'verbose',
     output: {
         libraryTarget: 'var',
         library: 'Client'
-    },
-    module: {
+    },    module: {
         rules: [
             {
                 test: '/\.js$/',
@@ -46,6 +46,11 @@ module.exports = {
             // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
-    })
-    ]
+        })
+    ],
+    devServer:{
+        port: 3001,
+        inline: true,
+        hot: true
+    }
 };

@@ -37,6 +37,14 @@
         <footer>
             <p>2021</p>
         </footer>
-
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker
+                    .register('/service-workers.js')
+                    .then(reg => console.log('Service Worker: Registered!'));
+                });
+            }
+        </script>
     </body>
 </html>
