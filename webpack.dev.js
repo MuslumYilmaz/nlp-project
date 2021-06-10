@@ -49,7 +49,7 @@ module.exports = {
         })
     ],
     devServer:{
-        port: 3001,
+        port: 8081,
         inline: true,
         hot: true
     }
