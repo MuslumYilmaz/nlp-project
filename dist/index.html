@@ -2,6 +2,7 @@
                 window.addEventListener('load', () => {
                     navigator.serviceWorker
                     .register('/service-workers.js')
-                    .then(reg => console.log('Service Worker: Registered!'));
+                    .then(reg => console.log('Service Worker: Registered!'))
+                    .catch(err => console.log(err));
                 });
             }</script></body></html>
