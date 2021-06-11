@@ -1,6 +1,5 @@
 var path = require('path');
 const express = require('express');
-const mockAPIResponse = require('./mockAPI.js');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -29,10 +28,6 @@ app.listen(8080, function () {
 
 app.get('/', function (req, res) {
     res.sendFile(path.resolve('dist/index.html'));
-});
-
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
 });
 
 app.post('/userInput', async (req, res) => {
